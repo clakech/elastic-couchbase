@@ -1,0 +1,8 @@
+path:
+  data: /data/data
+  logs: /data/log
+  plugins: /elasticsearch/plugins
+  work: /data/work
+couchbase.username: root
+couchbase.password: foobar
+couchbase.maxConcurrentRequests: 1024
