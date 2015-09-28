@@ -10,16 +10,23 @@ wait_for_start() {
     done
 }
 
+init_couchbase_template() {
+    curl -X PUT http://localhost:9200/_template/couchbase -d @plugins/transport-couchbase/couchbase_template.json 
+}
+
+create_data_index() {
+    curl -X PUT http://localhost:9200/data
+}
 
 echo "launch elastic"
 /elasticsearch/bin/elasticsearch &
+cd /elasticsearch
 
-wait_for_start echo "create couchbase template"
-wait_for_start cd /elasticsearch
-wait_for_start curl -X PUT http://localhost:9200/_template/couchbase -d @plugins/transport-couchbase/couchbase_template.json 
+echo "create couchbase template"
+wait_for_start init_couchbase_template
 
-wait_for_start echo "create data index"
-wait_for_start curl -X PUT http://localhost:9200/data
+echo "create data index"
+wait_for_start create_data_index
 	
 wait
 
