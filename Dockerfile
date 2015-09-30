@@ -8,6 +8,8 @@ RUN ["/elasticsearch/bin/plugin", "--install", "transport-couchbase", "--url", "
 
 RUN ["/elasticsearch/bin/plugin", "--install", "mobz/elasticsearch-head"]
 
+RUN ["/elasticsearch/bin/plugin", "--install", "lmenezes/elasticsearch-kopf/2.0"]
+
 COPY init.sh /
 
 ENTRYPOINT ["/init.sh"]
