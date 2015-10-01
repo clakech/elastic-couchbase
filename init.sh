@@ -25,9 +25,11 @@ cd /elasticsearch
 echo "create couchbase template"
 wait_for_start init_couchbase_template
 
-echo "create data index"
-wait_for_start create_data_index
-	
+if [ "$INIT_CLUSTER" = "1" ]; then
+    echo "create data index"
+    wait_for_start create_data_index
+fi
+    
 wait
 
 
