@@ -6,3 +6,6 @@ path:
 couchbase.username: root
 couchbase.password: foobar
 couchbase.maxConcurrentRequests: 1024
+couchbase.keyFilter: org.elasticsearch.transport.couchbase.capi.RegexKeyFilter
+couchbase.keyFilter.type: exclude
+couchbase.keyFilter.keyFiltersRegex.archive: ^archive_.*$
