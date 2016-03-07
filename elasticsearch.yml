@@ -3,8 +3,8 @@ path:
   logs: /data/log
   plugins: /elasticsearch/plugins
   work: /data/work
-couchbase.username: root
-couchbase.password: foobar
+couchbase.username: $CB_USER
+couchbase.password: $CB_PASSWORD
 couchbase.maxConcurrentRequests: 1024
 couchbase.keyFilter: org.elasticsearch.transport.couchbase.capi.RegexKeyFilter
 couchbase.keyFilter.type: exclude
